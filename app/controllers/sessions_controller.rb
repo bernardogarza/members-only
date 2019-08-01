@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
 
   def destroy
     user = current_user
-    sign_out
-    forget user
-    redirect_to :root
+    sign_out(user)
+    forget(user)
+    redirect_to root_url
   end
 
   private
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
       current_user = user
     end
 
-    def sign_out
+    def sign_out(user)
       if user == current_user
         session.delete(:user_id)
       end
