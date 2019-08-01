@@ -13,6 +13,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  def delete
+  end
+
   private
 
     def log_in(user)
