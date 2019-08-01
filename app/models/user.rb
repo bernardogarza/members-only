@@ -3,6 +3,8 @@ class User < ApplicationRecord
 	before_save :email_down_case
 	before_create :remember_me
 
+	has_many :posts
+
   validates :name,presence: true,uniqueness: true, length: {minimum: 2}
   REGEX_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: {case_sensitive: false}, format: { with: REGEX_EMAIL }
