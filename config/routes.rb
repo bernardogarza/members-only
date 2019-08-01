@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   get 'static_pages/index'
 
-  resources :posts, only: %i[index new create]
+  resources :posts, only: %i[new create]
 end
