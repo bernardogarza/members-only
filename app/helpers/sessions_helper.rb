@@ -1,6 +1,6 @@
 module SessionsHelper
   def current_user
-    if sessions[:user_id]
+    if session[:user_id]
       user = User.find(sessions[:user_id])
     elsif cookies[:user_id]
       user = User.find(cookies[:user_id])
