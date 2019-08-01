@@ -1,10 +1,10 @@
 <h1>Posts</h1>
 <% @posts.each do |post| %>
     <% if logged_in? %>
-        Author: <%= post.user_id.name %><br>
+        Author: <%= post.user.name %><br>
     <% else %>
-        Log in to see the author
+        Log in to see the author<br>
     <% end %>
     Title: <%= post.title %><br>
-    <%= post.text %><br>
+    Post:<br><%= post.text %><br>
 <% end %>
