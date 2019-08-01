@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	attr_accessor :remember_token
 	before_save :email_down_case
 	before_create :remember_token
 
@@ -7,7 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: {case_sensitive: false}, format: { with: REGEX_EMAIL }
 	validates :password, presence: true, length: {in: 6..50}
 	has_secure_password
-	
+
 	def self.new_token
 		SecureRandom.urlsafe_base64
 	end
