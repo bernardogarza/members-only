@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     user = current_user
     sign_out
     forget user
-    redirect_to static_pages_index_path
+    redirect_to :root
   end
 
   private

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'static_pages#index'
   get 'sessions/new'
   post '/sessions' => 'sessions#create'
-  delete 'sessions/destroy'
+  delete '/signout' => 'sessions#destroy'
   get 'static_pages/index'
-  # sources :sessions, only: %i[new create]
+  # resources :sessions, only: %i[new create destroy]
+
 end

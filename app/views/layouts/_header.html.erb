@@ -1,6 +1,6 @@
 <h1>Exclusive</h1>
 <% if logged_in? %>
-    <%= link_to  "Log Out", sessions_destroy_path %>
+    <%= link_to  "Log Out", signout_path %>
 <% else %>
     <%= link_to  "Log in", sessions_new_path %>
 <% end %>
