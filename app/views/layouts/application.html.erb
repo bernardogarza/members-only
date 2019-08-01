@@ -10,11 +10,7 @@
   </head>
 
   <body>
-    <header>
-      <% if logged_in? %>
-        <%= link_to 'sessions_destroy_path', 'Log Out' %>
-      <% end %>
-    </header>
+    <%= render "/layouts/header" %>
 
     <%= yield %>
   </body>
