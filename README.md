@@ -4,7 +4,9 @@ This is the Members Only application for the Microverse Main Curriculum
 
 ## Authors
 Bernanrdo Garza - bernardo.g.landa@gmail.com
+
 Kalib Hackin - naguihw@gmail.com
+
 
 ## Getting started
 
