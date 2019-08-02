@@ -3,8 +3,9 @@
     <% if logged_in? %>
         Author: <%= post.user.name %><br>
     <% else %>
-        Log in to see the author<br>
+        <h4>**Log in to see the author**</h4><br>
     <% end %>
     Title: <%= post.title %><br>
     Post:<br><%= post.text %><br>
+    <br><br>
 <% end %>

@@ -1,24 +1,36 @@
-# README
+# Ruby on Rails Members Only app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Members Only application for the Microverse Main Curriculum
 
-Things you may want to cover:
+## Authors
+Bernanrdo Garza - bernardo.g.landa@gmail.com
+Kalib Hackin - naguihw@gmail.com
 
-* Ruby version
+## Getting started
 
-* System dependencies
+To get started with the app, clone the repo and then install the needed gems:
 
-* Configuration
+```
+$ bundle install --without production
+```
 
-* Database creation
+Next, migrate the database:
 
-* Database initialization
+```
+$ rails db:migrate
+```
 
-* How to run the test suite
+Finally, create an user on the console:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails console
+$ user = User.new(name:"Your name", email:"your@email.com", password:"your_password", password_confirmation:"your_password")
+$ user.save
 
-* Deployment instructions
+```
 
-* ...
+Once you created a user you can start the server to view the app:
+
+```
+$ rails server
+```
