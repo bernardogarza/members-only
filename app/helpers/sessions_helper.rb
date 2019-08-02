@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 module SessionsHelper
   def current_user
-    if session[:user_id]
-      user = User.find(sessions[:user_id])
-    elsif cookies[:user_id]
-      user = User.find(cookies[:user_id])
-    else
-      user = nil
-    end
+    user = if session[:user_id]
+             User.find(sessions[:user_id])
+           elsif cookies[:user_id]
+             User.find(cookies[:user_id])
+           end
   end
 
   def logged_in?
@@ -15,7 +15,7 @@ module SessionsHelper
 
   def current_user=(user)
     sessions[:user_id] = user.id
-    current_user=current_user
+    current_user = current_user
   end
 
   def remember(user)
@@ -24,7 +24,7 @@ module SessionsHelper
     cookies.permanent[:remember_digest] = user.remember_digest
   end
 
-  def forget(user)
+  def forget(_user)
     cookies.delete(:user_id)
     cookies.delete(:remember_digest)
   end

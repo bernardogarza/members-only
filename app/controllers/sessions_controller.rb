@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    if user&.authenticate(params[:session][:password])
       log_in(user)
       remember user
       redirect_to posts_path
@@ -22,13 +23,11 @@ class SessionsController < ApplicationController
 
   private
 
-    def log_in(user)
-      current_user = user
-    end
+  def log_in(user)
+    current_user = user
+  end
 
-    def sign_out(user)
-      if user == current_user
-        session.delete(:user_id)
-      end
-    end
+  def sign_out(user)
+    session.delete(:user_id) if user == current_user
+  end
 end
