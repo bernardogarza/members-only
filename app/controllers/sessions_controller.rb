@@ -23,11 +23,11 @@ class SessionsController < ApplicationController
 
   private
 
-  def log_in(user)
-    current_user = user
-  end
+  # def log_in(user)
+  #   current_user = user
+  # end
 
-  def sign_out(user)
-    session.delete(:user_id) if user == current_user
-  end
+  # def sign_out(user)
+  #   session.delete(:user_id) if user == current_user
+  # end
 end

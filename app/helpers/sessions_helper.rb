@@ -28,4 +28,13 @@ module SessionsHelper
     cookies.delete(:user_id)
     cookies.delete(:remember_digest)
   end
+
+  def log_in(user)
+    current_user = user
+  end
+
+  def sign_out(user)
+    session.delete(:user_id) if user == current_user
+  end
+  
 end
