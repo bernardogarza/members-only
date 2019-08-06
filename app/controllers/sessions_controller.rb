@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
     else
       flash[:errors] = ["Invalid Combination"]
       redirect_back(fallback_location: root_path)
-      # render 'new'
     end
   end
 
@@ -22,14 +21,4 @@ class SessionsController < ApplicationController
     forget(user)
     redirect_to root_url
   end
-
-  private
-
-  # def log_in(user)
-  #   current_user = user
-  # end
-
-  # def sign_out(user)
-  #   session.delete(:user_id) if user == current_user
-  # end
 end
