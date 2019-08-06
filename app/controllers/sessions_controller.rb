@@ -10,7 +10,9 @@ class SessionsController < ApplicationController
       remember user
       redirect_to posts_path
     else
-      render 'new'
+      flash[:errors] = ["Invalid Combination"]
+      redirect_back(fallback_location: root_path)
+      # render 'new'
     end
   end
 

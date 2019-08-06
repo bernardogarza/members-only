@@ -7,6 +7,14 @@
     <%= f.submit "Log In"%>
 <% end %>
 
+<% if flash[:errors] %>
+  <div>       
+    <% flash[:errors].each do |e| %>
+      <p><%= e %></p>
+    <% end %> 
+  </div>
+<% end %>
+
 <!-- <div class="logout">
   <% if logged_in? %>
     <%= link_to 'Log Out', sessions_destroy_path   %>
