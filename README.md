@@ -22,16 +22,7 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
-Finally, create an user on the console:
-
-```
-$ rails console
-$ user = User.new(name:"Your name", email:"your@email.com", password:"your_password", password_confirmation:"your_password")
-$ user.save
-
-```
-
-Once you created a user you can start the server to view the app:
+You can start the server to view the app:
 
 ```
 $ rails server
