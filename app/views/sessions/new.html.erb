@@ -1,0 +1,16 @@
+<h1>Log In</h1>
+<%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email, placeholder: "Email" %><br>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password, placeholder: "Password" %><br>
+    <%= f.submit "Log In"%>
+<% end %>
+
+<% if flash[:errors] %>
+  <div>       
+    <% flash[:errors].each do |e| %>
+      <p><%= e %></p>
+    <% end %> 
+  </div>
+<% end %>
