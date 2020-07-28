@@ -1,6 +1,6 @@
 # Ruby on Rails Members Only app
 
-This is the Members Only application for the Microverse Main Curriculum
+This application is built with Ruby on Rails. It's a "blog" application which allow to sign-up and log-in to create posts.
 
 ## Authors
 Bernanrdo Garza - bernardo.g.landa@gmail.com
